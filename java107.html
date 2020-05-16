@@ -1,0 +1,69 @@
+<!--<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Documento</title>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <script>
+        const estudiantes = [{
+            nombre: "Juan Alba",
+            num: 16
+        }, {
+            nombre: "Gabriela Peña",
+            num: 13
+        }, {
+            nombre: "Felipe Gomez",
+            num: 17
+        }, {
+            nombre: "Alberto Perez",
+            num: 15
+        }, {
+            nombre: "Maria Peguero",
+            num: 4
+        }];
+        // Recuperar todas las personas mayores de edad
+        const estudiantesdemayororden = estudiantes.filter((elemento, indice, arreglo) => elemento.num >= 15);
+        for (let estudiantes of estudiantesdemayororden)
+            document.write(`${estudiantes.nombre} ${estudiantes.num}<br>`);
+    </script>
+</body>
+
+</html>-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Documento</title>
+    <meta charset="UTF-8">
+</head>
+
+<body style="background-color: goldenrod;">
+    <div>
+        <button id="boton1">Inicio</button>
+        <button id="boton2">Informacion</button>
+        <button id="boton3">Contactos</button>
+    </div>
+    <div id="menu"></div>
+
+    </div>
+    <script>
+        addEventListener("DOMContentLoaded", () => {
+            document.getElementById("boton1").addEventListener("click", () => mostrar('Inicio.txt'));
+            document.getElementById("boton2").addEventListener("click", () => mostrar('Informacion.txt'));
+            document.getElementById("boton3").addEventListener("click", () => mostrar('Contactos.txt'));
+        });
+
+        function mostrar(signo) {
+            fetch(signo)
+                .then(response => response.text())
+                .then(datos => document.getElementById("menu").innerText = datos);
+        }
+    </script>
+
+</body>
+
+</html>
